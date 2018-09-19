@@ -227,7 +227,7 @@ module.exports = {
     const { visitDate, visitCompany, visitPlace, visitManager, visitPurpose, visitorName, visitorCompany, visitorPhone, isStuff, visitCar, visitCarNumber } = data;
     return {
       message: {
-        text: `방문일자: [ ${visitDate}} ]\n방문회사 : [ ${visitCompany} ]\n방문장소 : [ ${visitPlace} ]\n담당자명 : [ ${visitManager} ]\n방문목적 : [ ${visitPurpose} ]\n방문자명: [ ${visitorName} ]\n회사명 : [ ${visitorCompany} ]\n휴대폰번호 : [ ${visitorPhone} ]\n차량반입여부 : [ ${visitCar === '아니요' ? 'X' : 'O / '+visitCarNumber} ]\n반입물품 : [ ${isStuff === '아니요' ? 'X' : isStuff} ]\n\n위와 같이 방문신청을 하시겠습니까?`,
+        text: `방문일자: [ ${visitDate} ]\n방문회사 : [ ${visitCompany} ]\n방문장소 : [ ${visitPlace} ]\n담당자명 : [ ${visitManager} ]\n방문목적 : [ ${visitPurpose} ]\n방문자명: [ ${visitorName} ]\n회사명 : [ ${visitorCompany} ]\n휴대폰번호 : [ ${visitorPhone} ]\n차량반입여부 : [ ${visitCar === '아니요' ? 'X' : 'O / '+visitCarNumber} ]\n반입물품 : [ ${isStuff === '아니요' ? 'X' : isStuff} ]\n\n위와 같이 방문신청을 하시겠습니까?`,
         // photo: {
         //   'url': 'http://ec2-52-79-83-252.ap-northeast-2.compute.amazonaws.com:8080/cookie.jpg',
         //   'width': 640,
