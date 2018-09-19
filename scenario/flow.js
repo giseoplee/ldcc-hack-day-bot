@@ -52,9 +52,9 @@ module.exports = function (key, content, context) {
   function nextBranch (context, msg) {
     return go(context,
       match
-      .case({index: 'applyForVisit'})(_ => applyForVisitBranch(c, msg))
-      .case({index: 'personalInfoAgree'})(_ => personalInfoAgreeBranch(c, msg))
-      .case({index: 'isVisited'})(_ => isVisitedBranch(c, msg))
+      .case({index: 'applyForVisit'})(c => applyForVisitBranch(c, msg))
+      .case({index: 'personalInfoAgree'})(c => personalInfoAgreeBranch(c, msg))
+      .case({index: 'isVisited'})(c => isVisitedBranch(c, msg))
       .case({index: 'visitorName'})(_ => 'visitorCompany')
       .case({index: 'visitorCompany'})(_ => 'visitorPhone')
       .case({index: 'visitorPhone'})(_ => 'visitorInfoCheck')
@@ -69,7 +69,7 @@ module.exports = function (key, content, context) {
       .case({index: 'visitCar'})(c => visitCarBranch(c, msg))
       .case({index: 'isStuff'})(_ => 'applyForVisitConfirm')
       .case({index: 'applyForVisitConfirm'})(c => applyForVisitConfirmBranch(c, msg))
-      .case({index: 'applyForVisitCheck'})(c => 'applyForVisit')
+      .case({index: 'applyForVisitCheck'})(_ => 'applyForVisit')
       .else(_ => 'applyForVisit')
     )
   };
