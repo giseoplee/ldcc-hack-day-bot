@@ -224,10 +224,10 @@ module.exports = {
     }
   },
   applyForVisitConfirm: function (data) {
-    const { visitDate, visitCompany, visitPlace, visitManager, visitPurpose, visitorName, visitorCompany, visitorPhone, visitorStuff, visitorCar } = data;
+    const { visitDate, visitCompany, visitPlace, visitManager, visitPurpose, visitorName, visitorCompany, visitorPhone, isStuff, visitCar, visitCarNumber } = data;
     return {
       message: {
-        text: `방문일자: [ ${visitDate}} ]\n방문회사 : [ ${visitCompany} ]\n방문장소 : [ ${visitPlace} ]\n담당자명 : [ ${visitManager} ]\n방문목적 : [ ${visitPurpose} ]\n방문자명: [ ${visitorName} ]\n회사명 : [ ${visitorCompany} ]\n휴대폰번호 : [ ${visitorPhone} ]\n차량반입여부 : [ ${visitorCar} ]\n반입물품 : [ ${visitorStuff} ]\n\n위와 같이 방문신청을 하시겠습니까?`,
+        text: `방문일자: [ ${visitDate}} ]\n방문회사 : [ ${visitCompany} ]\n방문장소 : [ ${visitPlace} ]\n담당자명 : [ ${visitManager} ]\n방문목적 : [ ${visitPurpose} ]\n방문자명: [ ${visitorName} ]\n회사명 : [ ${visitorCompany} ]\n휴대폰번호 : [ ${visitorPhone} ]\n차량반입여부 : [ ${visitCar === '아니요' ? 'X' : 'O / '+visitCarNumber} ]\n반입물품 : [ ${isStuff === '아니요' ? 'X' : isStuff} ]\n\n위와 같이 방문신청을 하시겠습니까?`,
         // photo: {
         //   'url': 'http://ec2-52-79-83-252.ap-northeast-2.compute.amazonaws.com:8080/cookie.jpg',
         //   'width': 640,
@@ -244,10 +244,10 @@ module.exports = {
     }
   },
   applyForVisitCheck: function (data) {
-    const { visitDate, visitCompany, visitPlace, visitManager, visitPurpose, visitorName, visitorCompany, visitorPhone, visitorStuff, visitorCar } = data;
+    const { visitDate, visitCompany, visitPlace, visitManager, visitPurpose, visitorName, visitorCompany, visitorPhone, isStuff, visitCar, visitCarNumber } = data;
     return {
       message: {
-        text: `방문신청 내역은 아래와 같습니다.\n방문일자: [ ${visitDate}} ]\n방문회사 : [ ${visitCompany} ]\n방문장소 : [ ${visitPlace} ]\n담당자명 : [ ${visitManager} ]\n방문목적 : [ ${visitPurpose} ]\n방문자명: [ ${visitorName} ]\n회사명 : [ ${visitorCompany} ]\n휴대폰번호 : [ ${visitorPhone} ]\n차량반입여부 : [ ${visitorCar} ]\n반입물품 : [ ${visitorStuff} ]\n\n 방문자 휴대폰 보안 프로그램 다운로드\nhttp://mdm.ldcc.co.kr/mdm_admin_server/download`,
+        text: `방문신청 내역은 아래와 같습니다.\n방문일자: [ ${visitDate}} ]\n방문회사 : [ ${visitCompany} ]\n방문장소 : [ ${visitPlace} ]\n담당자명 : [ ${visitManager} ]\n방문목적 : [ ${visitPurpose} ]\n방문자명: [ ${visitorName} ]\n회사명 : [ ${visitorCompany} ]\n휴대폰번호 : [ ${visitorPhone} ]\n차량반입여부 : [ ${visitorCar} ]\n반입물품 : [ ${isStuff === '아니요' ? 'X' : isStuff} ]\n\n 방문자 휴대폰 보안 프로그램 다운로드\nhttp://mdm.ldcc.co.kr/mdm_admin_server/download`,
         photo: {
           'url': 'http://ec2-52-79-83-252.ap-northeast-2.compute.amazonaws.com:8080/lottecenter_map.JPG',
           'width': 640,

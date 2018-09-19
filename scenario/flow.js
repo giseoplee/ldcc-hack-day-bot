@@ -13,8 +13,9 @@ module.exports = function (key, content, context) {
     visitorName: null,
     visitorCompany: null,
     visitorPhone: null,
-    visitorStuff: null,
-    visitorCar: null,
+    isStuff: null,
+    visitCar: null,
+    visitCarNumber: null,
   };
 
   function contextCheck (context) {
@@ -24,10 +25,6 @@ module.exports = function (key, content, context) {
   function setContext (context, msg) {
     if (context.index === 'visitTime') {
       context['visitDate'] = `${context.visitDate} ${msg}`;
-    } else if (context.index === 'isStuff' || context.index === 'visitCar' || context.index === 'visitCarNumber') {
-      log(context.index);
-      log(msg);
-      context[context.index] = msg;
     } else {
       context[context.index] = msg;
     }
