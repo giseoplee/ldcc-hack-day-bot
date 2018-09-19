@@ -67,6 +67,7 @@ module.exports = function (key, content, context) {
       .case({index: 'visitManager'})(_ => 'visitManagerCheck')
       .case({index: 'visitManagerCheck'})(_ => 'visitCar')
       .case({index: 'visitCar'})(c => visitCarBranch(c, msg))
+      .case({index: 'visitCarNumber'})(c => 'isStuff')
       .case({index: 'isStuff'})(_ => 'applyForVisitConfirm')
       .case({index: 'applyForVisitConfirm'})(c => applyForVisitConfirmBranch(c, msg))
       .case({index: 'applyForVisitCheck'})(_ => 'applyForVisit')
