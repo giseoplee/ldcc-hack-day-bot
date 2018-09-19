@@ -1,0 +1,1 @@
+# ldcc-hack-day-bot
