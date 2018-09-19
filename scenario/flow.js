@@ -103,8 +103,8 @@ module.exports = function (key, content, context) {
 
   function updateRedis (context, index) {
     // let contextToBeUpdate = newReservationCheck(context, context.index, content);
-    contextToBeUpdate.index = index;
-    return setValue(key, contextToBeUpdate).then(_ => contextToBeUpdate);
+    context.index = index;
+    return setValue(key, context).then(_ => context);
   };
 
   function messageFunction (context, index) {
