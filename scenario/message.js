@@ -23,22 +23,7 @@ module.exports = {
   },
   personalInfoAgree: {
     message: {
-      text: `방문자 등록을 하시려면 개인정보 수집 및 이용 동의가 필요합니다.
-
-      1. 개인정보의 수집 및 이용 목적
-      - 방문 수속 시 본인확인 처리
-      - 방문 신청 상태 전달(SMS 전송) 및 이용자 식별
-      
-      2. 수집하려는 개인정보의 항목
-      - 방문자명, 휴대폰번호 
-      
-      3. 개인정보의 보유 및 이용 기간
-      - 롯데센터를 방문한 시점으로부터 3개월간 보유
-      
-      4. 동의 거부권 및 동의 거부에 따른 불이익 내용
-      - 개인정보 수집 및 이용에 관한 동의를 거부할 수 있으며, 이 경우 출입이 제한될 수 있습니다.
-      
-      위 개인정보 수집 및 이용약관, 방문회사 약관에 동의하십니까?`,
+      text: `방문자 등록을 하시려면 개인정보 수집 및 이용 동의가 필요합니다.\n\n1. 개인정보의 수집 및 이용 목적\n- 방문 수속 시 본인확인 처리\n- 방문 신청 상태 전달(SMS 전송) 및 이용자 식별\n\n2. 수집하려는 개인정보의 항목\n- 방문자명, 휴대폰번호\n\n3. 개인정보의 보유 및 이용 기간\n- 롯데센터를 방문한 시점으로부터 3개월간 보유\n\n4. 동의 거부권 및 동의 거부에 따른 불이익 내용\n- 개인정보 수집 및 이용에 관한 동의를 거부할 수 있으며, 이 경우 출입이 제한될 수 있습니다.\n\n위 개인정보 수집 및 이용약관, 방문회사 약관에 동의하십니까?`,
     },
     keyboard: {
       type: 'buttons',
@@ -79,7 +64,7 @@ module.exports = {
     const { visitorName, visitorCompany, visitorPhone } = data;
     return {
       message: {
-        text: `아래의 방문자 정보가 맞습니까?\n방문자명: [ ${visitorName} ]\n회사명: [ ${visitorCompany}} ]\n휴대폰 번호 : [ ${visitorPhone} ]`
+        text: `아래의 방문자 정보가 맞습니까?\n방문자명: [ ${visitorName} ]\n회사명: [ ${visitorCompany} ]\n휴대폰 번호 : [ ${visitorPhone} ]`
         // photo: {
         //   'url': 'http://ec2-52-79-83-252.ap-northeast-2.compute.amazonaws.com:8080/astrology.jpg',
         //   'width': 640,
@@ -242,7 +227,7 @@ module.exports = {
     const { visitDate, visitCompany, visitPlace, visitManager, visitPurpose, visitorName, visitorCompany, visitorPhone, visitorStuff, visitorCar } = data;
     return {
       message: {
-        text: `방문일자: [ ${visitDate}} ]\n방문회사 : [ ${visitCompany} ]\n방문장소 : [ ${visitPlace} ]\n담당자명 : [ ${visitManager} ]\n방문목적 : [ ${visitPurpose} ]\n방문자명: [ ${visitorName} ]\n회사명 : [ ${visitorCompany} ]\n휴대폰번호 : [ ${visitorPhone} ]\n차량반입여부 : [ ${visitorCar} ]\n반입물품 : [ ${visitorStuff} ]\n위와 같이 방문신청을 하시겠습니까?`,
+        text: `방문일자: [ ${visitDate}} ]\n방문회사 : [ ${visitCompany} ]\n방문장소 : [ ${visitPlace} ]\n담당자명 : [ ${visitManager} ]\n방문목적 : [ ${visitPurpose} ]\n방문자명: [ ${visitorName} ]\n회사명 : [ ${visitorCompany} ]\n휴대폰번호 : [ ${visitorPhone} ]\n차량반입여부 : [ ${visitorCar} ]\n반입물품 : [ ${visitorStuff} ]\n\n위와 같이 방문신청을 하시겠습니까?`,
         // photo: {
         //   'url': 'http://ec2-52-79-83-252.ap-northeast-2.compute.amazonaws.com:8080/cookie.jpg',
         //   'width': 640,

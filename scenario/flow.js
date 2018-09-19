@@ -24,6 +24,10 @@ module.exports = function (key, content, context) {
   function setContext (context, msg) {
     if (context.index === 'visitTime') {
       context['visitDate'] = `${context.visitDate} ${msg}`;
+    } else if (context.index === 'isStuff' || context.index === 'visitCar' || context.index === 'visitCarNumber') {
+      log(context.index);
+      log(msg);
+      context[context.index] = msg;
     } else {
       context[context.index] = msg;
     }
@@ -103,7 +107,6 @@ module.exports = function (key, content, context) {
   };
 
   function updateRedis (context, index) {
-    // let contextToBeUpdate = newReservationCheck(context, context.index, content);
     context.index = index;
     return setValue(key, context).then(_ => context);
   };
